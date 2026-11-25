@@ -1,0 +1,36 @@
+# KiCad
+*.kicad_prl
+*.kicad_lck
+*.lck
+*-backups/
+*.bak
+fp-info-cache
+
+# NI Multisim
+*.ms14
+*.mp14
+*.ms13
+*.mp12
+*.ms12
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.history
