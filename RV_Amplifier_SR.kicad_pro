@@ -156,7 +156,7 @@
         "min_track_width": 0.2,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -240,7 +240,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "1"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -495,7 +495,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.3,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -506,19 +506,131 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.5,
         "tuning_profile": "",
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
         "wire_width": 6
+      },
+      {
+        "clearance": 0.35,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "AUDIO_SIG",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": "",
+        "via_diameter": 0.8,
+        "via_drill": 0.4
+      },
+      {
+        "clearance": 0.4,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "GND",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.0,
+        "tuning_profile": "",
+        "via_diameter": 1.5,
+        "via_drill": 1.0
+      },
+      {
+        "clearance": 0.4,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "PWR_2A",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.0,
+        "tuning_profile": "",
+        "via_diameter": 1.5,
+        "via_drill": 1.0
+      },
+      {
+        "clearance": 0.4,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "SPK_2A",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.0,
+        "tuning_profile": "",
+        "via_diameter": 1.5,
+        "via_drill": 1.0
       }
     ],
     "meta": {
       "version": 5
     },
     "net_colors": null,
-    "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_assignments": {
+      "+VS": [
+        "PWR_2A"
+      ],
+      "-VS": [
+        "PWR_2A"
+      ],
+      "Net-(D1-+)": [
+        "PWR_2A"
+      ],
+      "Net-(D1--)": [
+        "PWR_2A"
+      ],
+      "Net-(D2-K)": [
+        "PWR_2A"
+      ],
+      "Net-(D4-A)": [
+        "PWR_2A"
+      ],
+      "Net-(D8-A)": [
+        "SPK_2A"
+      ],
+      "Net-(J1-Pin_1)": [
+        "PWR_2A"
+      ],
+      "Net-(J1-Pin_3)": [
+        "PWR_2A"
+      ],
+      "Net-(R5-Pad2)": [
+        "AUDIO_SIG"
+      ]
+    },
+    "netclass_patterns": [
+      {
+        "netclass": "GND",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "PWR_2A",
+        "pattern": "PWR_2A"
+      },
+      {
+        "netclass": "PWR_2A",
+        "pattern": "PWR_FLAG"
+      },
+      {
+        "netclass": "AUDIO_SIG",
+        "pattern": "AUDIO_SIG"
+      },
+      {
+        "netclass": "SPK_2A",
+        "pattern": "SPK_2A"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -678,7 +790,7 @@
         "uuid": "c5550537-dbc9-4b74-9c40-c7c899b4dd71"
       }
     ],
-    "used_designators": "#FLG1-3,J3,F1-2,C14",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
